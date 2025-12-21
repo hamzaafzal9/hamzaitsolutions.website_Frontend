@@ -21,14 +21,15 @@ async function loadBlogGrid() {
     posts.forEach(post => {
         const card = document.createElement('div');
         card.className = 'blog-card';
-        // CHANGE: We now use /article/${post.id} instead of article.html?id=...
+        
+        // UPDATED: Added target="_blank" to both <a> tags below
         card.innerHTML = `
             <img src="${post.image}" alt="${post.title}">
             <div class="card-content">
                 <span class="category">${post.category}</span>
-                <h3><a href="/article/${post.id}">${post.title}</a></h3>
+                <h3><a href="/article/${post.id}" target="_blank">${post.title}</a></h3>
                 <p>${post.summary}</p>
-                <a href="/article/${post.id}" class="read-more">Read More &rarr;</a>
+                <a href="/article/${post.id}" class="read-more" target="_blank">Read More &rarr;</a>
             </div>
         `;
         grid.appendChild(card);
@@ -40,7 +41,6 @@ async function loadSingleArticle() {
     if (!container) return;
 
     // CHANGE: We get the ID from the URL path (last part) instead of ?id=
-    // Example: /article/flutter-vs-native -> id = flutter-vs-native
     const postId = window.location.pathname.split('/').pop();
     
     const posts = await fetchPosts();
