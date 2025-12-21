@@ -1,0 +1,20 @@
+[
+    {
+        "id": "best-laptop-processors-2025",
+        "title": "Understanding Laptop Processors: Intel H vs U Series",
+        "category": "Hardware",
+        "date": "2025-12-21",
+        "image": "https://via.placeholder.com/600x400",
+        "summary": "Confused between Intel U, P, and H series? We break down which processor fits your coding needs.",
+        "content": "<p>When buying a laptop for development, the processor suffix matters...</p><h2>The H Series</h2><p>These are high performance...</p>"
+    },
+    {
+        "id": "flutter-vs-native",
+        "title": "Why I Chose Flutter for Mobile Development",
+        "category": "Software",
+        "date": "2025-12-20",
+        "image": "https://via.placeholder.com/600x400",
+        "summary": "A professional developer's take on cross-platform frameworks.",
+        "content": "<p>Flutter has changed the way we build apps. Here is why...</p>"
+    }
+]
