@@ -1,4 +1,4 @@
-/* HAMZA IT SOLUTIONS - PROFESSIONAL THEME 2025 */
+/* HAMZA IT SOLUTIONS - PROFESSIONAL & RESPONSIVE THEME 2025 */
 
 /* 1. RESET & BASE */
 :root {
@@ -12,9 +12,10 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
-body { background-color: var(--light); color: var(--text-main); line-height: 1.6; }
+body { background-color: var(--light); color: var(--text-main); line-height: 1.6; overflow-x: hidden; /* Prevents horizontal scrollbar on mobile */ }
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
+img { max-width: 100%; height: auto; display: block; /* FIX: Ensures images never overflow their container */ }
 
 /* 2. NAVBAR */
 .navbar {
@@ -28,79 +29,111 @@ ul { list-style: none; }
     top: 0;
     z-index: 1000;
 }
-.logo { font-size: 1.8rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
-.nav-links { display: flex; gap: 30px; }
-.nav-links a { font-weight: 600; color: var(--text-main); font-size: 1rem; }
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; white-space: nowrap; }
+.nav-links { display: flex; gap: 20px; align-items: center; }
+.nav-links a { font-weight: 600; color: var(--text-main); font-size: 0.95rem; }
 .nav-links a:hover { color: var(--primary); }
 .cta-btn { 
-    background: var(--primary); color: white !important; padding: 10px 25px; 
-    border-radius: 50px; font-weight: bold; box-shadow: 0 4px 15px rgba(0,86,179,0.3);
+    background: var(--primary); color: white !important; padding: 8px 20px; 
+    border-radius: 50px; font-weight: bold; box-shadow: 0 4px 15px rgba(0,86,179,0.3); white-space: nowrap;
 }
 .cta-btn:hover { background: var(--dark); transform: translateY(-2px); }
 
-/* 3. HERO SECTION (THE "HUGE" PART) */
+/* 3. HERO SECTION */
 .hero {
     background: linear-gradient(135deg, var(--dark) 0%, #16213e 100%);
     color: var(--white);
-    padding: 6rem 1rem;
+    padding: 4rem 1rem; /* Reduced padding for better mobile look */
     text-align: center;
     position: relative;
     overflow: hidden;
 }
-.hero::after {
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=50') center/cover;
-    opacity: 0.1; /* Subtle texture */
-}
-.hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
-.hero h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; font-weight: 800; }
-.hero p { font-size: 1.3rem; opacity: 0.9; margin-bottom: 30px; }
-.hero-buttons { display: flex; justify-content: center; gap: 20px; }
-.btn-primary { background: var(--secondary); color: var(--white); padding: 15px 40px; border-radius: 5px; font-weight: bold; font-size: 1.1rem; }
-.btn-outline { border: 2px solid var(--white); color: var(--white); padding: 13px 40px; border-radius: 5px; font-weight: bold; font-size: 1.1rem; }
-.btn-primary:hover { transform: scale(1.05); }
+.hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; padding: 0 20px; }
+.hero h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px; font-weight: 800; }
+.hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; }
+.hero-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; /* Allows buttons to stack on small phones */ }
+.btn-primary, .btn-outline { padding: 12px 30px; border-radius: 5px; font-weight: bold; font-size: 1rem; white-space: nowrap; }
+.btn-primary { background: var(--secondary); color: var(--white); }
+.btn-outline { border: 2px solid var(--white); color: var(--white); }
 
 /* 4. FEATURES SECTION */
 .features { padding: 4rem 5%; background: var(--white); text-align: center; }
-.section-title { font-size: 2.5rem; margin-bottom: 3rem; color: var(--dark); position: relative; display: inline-block; }
-.section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--primary); margin: 10px auto 0; }
-.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-.feature-box { padding: 2rem; border: 1px solid #eee; border-radius: 10px; transition: 0.3s; }
-.feature-box:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-color: var(--primary); }
+.section-title { font-size: 2rem; margin-bottom: 2.5rem; color: var(--dark); position: relative; display: inline-block; }
+.section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--primary); margin: 10px auto 0; }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 0 20px; }
+.feature-box { padding: 2rem; border: 1px solid #eee; border-radius: 10px; transition: 0.3s; background: white; }
 .feature-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
 
-/* 5. BLOG GRID (EXISTING) */
-.container { max-width: 1200px; margin: 4rem auto; padding: 0 20px; }
-.blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
-.blog-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; }
-.blog-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-.blog-card img { width: 100%; height: 220px; object-fit: cover; }
-.card-content { padding: 1.5rem; }
-.category { color: var(--primary); font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
-.blog-card h3 { margin: 10px 0; font-size: 1.5rem; line-height: 1.3; }
-.read-more { color: var(--primary); font-weight: bold; margin-top: 15px; display: inline-block; }
+/* 5. BLOG GRID & CONTAINER */
+.container { max-width: 1100px; margin: 3rem auto; padding: 0 20px; }
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.blog-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; display: flex; flex-direction: column; }
+.blog-card img { width: 100%; height: 200px; object-fit: cover; }
+.card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+.category { color: var(--primary); font-weight: 700; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; }
+.blog-card h3 { margin: 10px 0; font-size: 1.3rem; line-height: 1.3; flex-grow: 1; }
+.read-more { color: var(--primary); font-weight: bold; margin-top: auto; /* Pushes button to bottom */ display: inline-block; pt-3; }
 
 /* 6. NEWSLETTER */
-.newsletter { background: var(--dark); color: var(--white); padding: 5rem 1rem; text-align: center; margin-top: 4rem; }
-.newsletter h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-.newsletter-form { margin-top: 2rem; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-.newsletter input { padding: 15px; width: 300px; border-radius: 5px; border: none; font-size: 1rem; }
-.newsletter button { padding: 15px 30px; background: var(--primary); color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+.newsletter { background: var(--dark); color: var(--white); padding: 4rem 1rem; text-align: center; margin-top: 4rem; }
+.newsletter h2 { font-size: 2rem; margin-bottom: 1rem; }
+.newsletter-form { margin-top: 2rem; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 0 20px; }
+.newsletter input { padding: 12px; width: 100%; max-width: 350px; border-radius: 5px; border: none; font-size: 1rem; }
+.newsletter button { padding: 12px 25px; background: var(--primary); color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; white-space: nowrap; }
 
 /* 7. FOOTER */
-footer { background: #111; color: #aaa; padding: 4rem 5% 2rem; display: grid; gap: 2rem; }
-.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto; }
-.footer-col h4 { color: var(--white); margin-bottom: 1.5rem; font-size: 1.2rem; }
-.footer-col ul li { margin-bottom: 10px; }
+footer { background: #111; color: #aaa; padding: 3rem 5% 2rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+.footer-col h4 { color: var(--white); margin-bottom: 1.2rem; font-size: 1.1rem; }
+.footer-col ul li { margin-bottom: 8px; }
 .footer-col a:hover { color: var(--primary); }
-.copyright { text-align: center; margin-top: 3rem; border-top: 1px solid #333; padding-top: 2rem; }
+.copyright { text-align: center; margin-top: 3rem; border-top: 1px solid #333; padding-top: 2rem; font-size: 0.9rem; }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .navbar { flex-direction: column; gap: 15px; }
-    .hero h1 { font-size: 2.5rem; }
-    .features-grid { grid-template-columns: 1fr; }
+/* 8. ARTICLE PAGE SPECIFICS (FIXED OVERFLOW) */
+.article-container { 
+    max-width: 800px; 
+    margin: -3rem auto 3rem auto; /* Overlaps hero slightly */
+    position: relative; 
+    z-index: 10; 
+    background: white; 
+    padding: 2rem; /* Reduced padding for mobile */
+    border-radius: 10px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 90%; /* Ensures it doesn't touch screen edges on mobile */
+}
+.article-container img { margin: 20px 0; border-radius: 8px; }
+.content-body { font-size: 1.05rem; line-height: 1.7; }
+.content-body h2 { margin-top: 1.5rem; color: var(--dark); }
+.meta { color: #777; font-size: 0.9rem; margin-bottom: 1rem; display: block; }
+
+/* 9. CONTACT & PRIVACY PAGES (FIXED OVERFLOW) */
+.contact-box, .policy-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: -3rem auto 3rem auto;
+    position: relative;
+    z-index: 10;
+    width: 90%;
+}
+/* FIX: Forces long emails/URLs to break line */
+.contact-method a, .policy-content a { 
+    word-break: break-all; 
+    color: var(--primary); font-weight: 600;
 }
 
-/* Article Page Overrides */
-.article-container { max-width: 800px; margin-top: -5rem; position: relative; z-index: 10; background: white; padding: 3rem; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+/* 10. MOBILE RESPONSIVE BREAKPOINTS */
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 15px; padding: 1rem; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+    .hero h1 { font-size: 2rem; }
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .btn-primary, .btn-outline { width: 100%; }
+    .newsletter-form { flex-direction: column; align-items: center; }
+    .newsletter input, .newsletter button { width: 100%; max-width: none; }
+    .article-container, .contact-box, .policy-content { padding: 1.5rem; margin-top: 1rem; width: 95%; }
+    .blog-grid { grid-template-columns: 1fr; } /* One column on phones */
+    .footer-grid { text-align: center; }
+}
