@@ -3,35 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamza IT Solutions | Tech Blog</title>
+    <title>Hamza IT Solutions | Premium Tech Blog</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">Hamza IT Solutions</div>
+        <div class="logo">HAMZA IT</div>
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="#">Hardware</a>
-            <a href="#">Software</a>
-            <a href="privacy.html">Privacy Policy</a> </div>
+            <a href="#hardware">Hardware</a>
+            <a href="#software">Software</a>
+            <a href="contact.html" class="cta-btn">Contact Us</a>
+        </div>
     </nav>
 
     <header class="hero">
-        <h1>Technology, Simplified.</h1>
-        <p>In-depth reviews and guides on Hardware, Software, and Mobile Tech.</p>
+        <div class="hero-content">
+            <h1>Mastering Technology,<br> One Byte at a Time.</h1>
+            <p>Your ultimate destination for expert PC builds, Laptop reviews, and Mobile software guides.</p>
+            <div class="hero-buttons">
+                <a href="#latest" class="btn-primary">Read Latest</a>
+                <a href="contact.html" class="btn-outline">Get Support</a>
+            </div>
+        </div>
     </header>
 
-    <main class="container">
-        <h2>Latest Articles</h2>
+    <section class="features">
+        <h2 class="section-title">Why Follow Us?</h2>
+        <div class="features-grid">
+            <div class="feature-box">
+                <i class="fas fa-laptop-code feature-icon"></i>
+                <h3>Expert Reviews</h3>
+                <p>Detailed breakdowns of Intel & AMD processors, SSDs, and more.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-mobile-alt feature-icon"></i>
+                <h3>Mobile Tech</h3>
+                <p>In-depth guides on Custom ROMs, Android Mods, and iOS tips.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-bug feature-icon"></i>
+                <h3>Coding Solutions</h3>
+                <p>Tutorials on Python, Flutter, and Web Development for beginners.</p>
+            </div>
+        </div>
+    </section>
+
+    <main id="latest" class="container">
+        <h2 class="section-title" style="text-align: left;">Latest Articles</h2>
         <div id="blog-grid" class="blog-grid">
-            <p>Loading articles...</p>
+            <p>Loading latest tech insights...</p>
         </div>
     </main>
 
+    <section class="newsletter">
+        <h2>Stay Updated</h2>
+        <p>Join 5,000+ tech enthusiasts. No spam, just tech.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email address">
+            <button type="button">Subscribe Now</button>
+        </form>
+    </section>
+
     <footer>
-        <p>&copy; 2025 Hamza IT Solutions. All rights reserved.</p>
-        <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Hamza IT Solutions</h4>
+                <p>Building the future of tech education in Pakistan.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Laptops & PCs</a></li>
+                    <li><a href="#">Mobile Phones</a></li>
+                    <li><a href="#">Programming</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Hamza IT Solutions. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="app.js"></script>
