@@ -1,6 +1,5 @@
-const JSON_URL = 'posts.json';
+const JSON_URL = '/posts.json'; // Added / to make it absolute
 
-// Fetch the posts
 async function fetchPosts() {
     try {
         const response = await fetch(JSON_URL);
@@ -12,38 +11,38 @@ async function fetchPosts() {
     }
 }
 
-// Logic for the Homepage (Grid)
 async function loadBlogGrid() {
     const grid = document.getElementById('blog-grid');
-    if (!grid) return; // Stop if we are not on the homepage
+    if (!grid) return;
 
     const posts = await fetchPosts();
-    grid.innerHTML = ''; // Clear loading text
+    grid.innerHTML = '';
 
     posts.forEach(post => {
         const card = document.createElement('div');
         card.className = 'blog-card';
+        // CHANGE: We now use /article/${post.id} instead of article.html?id=...
         card.innerHTML = `
             <img src="${post.image}" alt="${post.title}">
             <div class="card-content">
                 <span class="category">${post.category}</span>
-                <h3><a href="article.html?id=${post.id}">${post.title}</a></h3>
+                <h3><a href="/article/${post.id}">${post.title}</a></h3>
                 <p>${post.summary}</p>
-                <a href="article.html?id=${post.id}" class="read-more">Read More &rarr;</a>
+                <a href="/article/${post.id}" class="read-more">Read More &rarr;</a>
             </div>
         `;
         grid.appendChild(card);
     });
 }
 
-// Logic for the Article Page
 async function loadSingleArticle() {
     const container = document.getElementById('article-content');
     if (!container) return;
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const postId = urlParams.get('id');
-
+    // CHANGE: We get the ID from the URL path (last part) instead of ?id=
+    // Example: /article/flutter-vs-native -> id = flutter-vs-native
+    const postId = window.location.pathname.split('/').pop();
+    
     const posts = await fetchPosts();
     const post = posts.find(p => p.id === postId);
 
@@ -59,9 +58,8 @@ async function loadSingleArticle() {
             </div>
         `;
     } else {
-        container.innerHTML = `<h2>Article not found.</h2><a href="index.html">Go Home</a>`;
+        container.innerHTML = `<h2>Article not found.</h2><a href="/">Go Home</a>`;
     }
 }
 
-// Run the homepage logic if we are on index
 document.addEventListener('DOMContentLoaded', loadBlogGrid);
