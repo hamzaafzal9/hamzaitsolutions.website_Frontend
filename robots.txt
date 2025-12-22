@@ -1,0 +1,21 @@
+# Robots.txt for Hamza IT Solutions
+# https://hamzaitsolutions.website
+
+# Allow all web crawlers
+User-agent: *
+Allow: /
+
+# Allow Google to crawl everything
+User-agent: Googlebot
+Allow: /
+
+# Allow Bing to crawl everything
+User-agent: Bingbot
+Allow: /
+
+# Disallow crawling of any future admin areas
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://hamzaitsolutions.website/sitemap.xml

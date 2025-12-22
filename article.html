@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - Hamza IT Solutions</title>
+    <meta name="description" content="Read in-depth technology articles on Hamza IT Solutions.">
+
+    <!-- Open Graph defaults (will be updated by JS) -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Hamza IT Solutions">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">💻</span>
+                <span class="logo-text">Hamza IT Solutions</span>
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+
+            <div class="nav-menu" id="navMenu">
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <div class="nav-dropdown">
+                        <a href="categories/hardware.html" class="nav-link dropdown-trigger">
+                            Hardware <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="categories/hardware.html#pcs">PCs & Desktops</a>
+                            <a href="categories/hardware.html#laptops">Laptops</a>
+                            <a href="categories/hardware.html#processors">Processors</a>
+                            <a href="categories/hardware.html#components">Components</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="categories/software.html" class="nav-link dropdown-trigger">
+                            Software <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="categories/software.html#os">Operating Systems</a>
+                            <a href="categories/software.html#apps">Applications</a>
+                            <a href="categories/software.html#security">Security</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="categories/mobile.html" class="nav-link dropdown-trigger">
+                            Mobile <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="categories/mobile.html#apple">Apple/iPhone</a>
+                            <a href="categories/mobile.html#samsung">Samsung</a>
+                            <a href="categories/mobile.html#other">Other Brands</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (smaller for article) -->
+    <header class="page-hero page-hero-small">
+        <div class="hero-background"></div>
+    </header>
+
+    <!-- Article Content -->
+    <main class="container">
+        <article class="article-container" id="article-content">
+            <p>Loading article...</p>
+        </article>
+
+        <!-- Related Articles -->
+        <section id="related-articles" style="margin-top: 40px; margin-bottom: 60px;"></section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3 class="footer-title">Hamza IT Solutions</h3>
+                    <p class="footer-description">Your trusted source for comprehensive technology information, reviews,
+                        and guides.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="categories/hardware.html">Hardware</a></li>
+                        <li><a href="categories/software.html">Software</a></li>
+                        <li><a href="categories/mobile.html">Mobile</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hamza IT Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Load article on page load
+        document.addEventListener('DOMContentLoaded', loadSingleArticle);
+    </script>
+</body>
+
+</html>
