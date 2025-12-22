@@ -1,0 +1,24 @@
+# Clean URLs - Remove .html extension
+/index.html    /    301
+/about.html    /about    301
+/contact.html    /contact    301
+/privacy.html    /privacy    301
+/terms.html    /terms    301
+/disclaimer.html    /disclaimer    301
+/article.html    /article    301
+
+# Category pages
+/categories/hardware.html    /categories/hardware    301
+/categories/software.html    /categories/software    301
+/categories/mobile.html    /categories/mobile    301
+
+# Rewrite rules - serve .html files without extension
+/about    /about.html    200
+/contact    /contact.html    200
+/privacy    /privacy.html    200
+/terms    /terms.html    200
+/disclaimer    /disclaimer.html    200
+/article    /article.html    200
+/categories/hardware    /categories/hardware.html    200
+/categories/software    /categories/software.html    200
+/categories/mobile    /categories/mobile.html    200
